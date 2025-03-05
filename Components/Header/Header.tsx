@@ -6,9 +6,13 @@ import { faBars, faX } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
 import { useState } from "react";
 import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
+import ReactLanguageSelect from "react-languages-select";
+import "react-languages-select/scss/react-languages-select.scss";
 
 const Header = () => {
     const localActive = useLocale();
+    const t = useTranslations("header");
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -31,7 +35,7 @@ const Header = () => {
                                 setMobileMenuOpen(false);
                             }}
                         >
-                            Home
+                            {t("home")}
                         </Link>
                     </div>
                     <div className="navigation-links">
@@ -41,7 +45,7 @@ const Header = () => {
                                 setMobileMenuOpen(false);
                             }}
                         >
-                            My Projects
+                            {t("my_projects")}
                         </Link>
                     </div>
                     <div className="navigation-links">
@@ -53,7 +57,7 @@ const Header = () => {
                             }}
                             target="_blank"
                         >
-                            Download CV
+                            {t("download_cv")}
                         </Link>
                     </div>
                     <div className="navigation-links last-link">
@@ -63,7 +67,7 @@ const Header = () => {
                                 setMobileMenuOpen(false);
                             }}
                         >
-                            Contact Me
+                            {t("contact_me")}
                         </Link>
                     </div>
                 </aside>
@@ -74,21 +78,21 @@ const Header = () => {
             <header className="header">
                 <div className="container">
                     <div className="logo-container">
-                        <div className="hello-world">Hello World!</div>
+                        <div className="hello-world">{t("hello_world")}</div>
                     </div>
                     <div className="navigation-through-site">
                         <div className="navigation-links">
-                            <Link href={"/"}>Home</Link>
+                            <Link href={"/"}>{t("home")}</Link>
                         </div>
                         <div className="navigation-links">
-                            <Link href={`/${localActive}/projects`}>My Projects</Link>
+                            <Link href={`/${localActive}/projects`}>{t("my_projects")}</Link>
                         </div>
                         <div className="navigation-links">
                             <Link
                                 href={`/Resume.pdf`}
                                 target="_blank"
                             >
-                                Download CV
+                                {t("download_cv")}
                             </Link>
                         </div>
                         <div className="navigation-links last-link">
@@ -98,9 +102,10 @@ const Header = () => {
                                     setMobileMenuOpen(false);
                                 }}
                             >
-                                Contact Me
+                                {t("contact_me")}
                             </Link>
                         </div>
+                        <ReactLanguageSelect languages={["en", "am"]} />
                         <div
                             className="hamburger-menu"
                             onClick={() => {

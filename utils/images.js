@@ -5,6 +5,8 @@ import cornerWeb from "../assets/corner-web.png";
 import spider from "../assets/spider.png";
 import lamp from "../assets/lamp.png";
 
+const ICONS = {};
+
 const IMAGES = {
     pfp,
     eyeIcon,
@@ -12,6 +14,7 @@ const IMAGES = {
     cornerWeb,
     spider,
     lamp,
+    ICONS,
 };
 
 export default IMAGES;

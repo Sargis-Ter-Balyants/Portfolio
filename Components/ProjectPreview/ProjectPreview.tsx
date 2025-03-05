@@ -2,8 +2,11 @@ import Link from "next/link";
 import React from "react";
 
 import "./ProjectPreview.scss";
+import { useTranslations } from "next-intl";
 
 const ProjectPreview = ({ project }: any) => {
+    const t = useTranslations("projectPreview");
+
     return (
         <div className="all_projects_container">
             <div className="project_box">
@@ -16,20 +19,20 @@ const ProjectPreview = ({ project }: any) => {
             </div>
             <div className="description_box">
                 <h3>
-                    Creation Time | <span>{project.creationTime}</span>
+                    {t("creation_time")} | <span>{project.creationTime}</span>
                 </h3>
                 <h3>
-                    Technologies Used | <span>{project.technologies}</span>
+                    {t("technologies_used")} | <span>{project.technologies}</span>
                 </h3>
                 <h3>
-                    Category | <span>{project.category}</span>
+                    {t("category")} | <span>{project.category}</span>
                 </h3>
                 <Link
                     target="_blank"
                     href={project.link}
                     className="preview_btn"
                 >
-                    <button>Preview</button>
+                    <button>{t("preview")}</button>
                 </Link>
             </div>
             <div className="title">

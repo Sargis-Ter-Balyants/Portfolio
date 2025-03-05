@@ -1,0 +1,22 @@
+{
+    "header": {
+        "hello_world": "Բարև Սշխարհ!",
+        "home": "Տուն",
+        "my_projects": "Իմ պրոեկտները",
+        "download_cv": "Ներբեռնել CV",
+        "contact_me": "Կապվիր ինձ հետ"
+    },
+    "main": {
+        "bio": ""
+    },
+    "projectPreview": {
+        "creation_time": "Ստեղծման ժամանակ",
+        "technologies_used": "Օգտագործված տեխնոլոգիաներ",
+        "category": "Կատեգորիա",
+        "preview": "Դիտել",
+        "view_all_projects": "Դիտել բոլոր պրոեկտները"
+    },
+    "footer": {
+        "allRightsReserved": "Բոլոր իրավունքները պաշտպանված են ©2024"
+    }
+}
