@@ -7,7 +7,7 @@
         "contact_me": "Contact Me"
     },
     "main": {
-        "bio": ""
+        "bio": "Hello, My name is I am a Full Stack Software Developer, Problem Solver. Also I am developing web/desktop games just for fun and experience, but the most important one...a person with humor"
     },
     "projectPreview": {
         "creation_time": "Creation Time",
@@ -15,6 +15,20 @@
         "category": "Category",
         "preview": "Preview",
         "view_all_projects": "View All Projects"
+    },
+    "skills": {
+        "hover_on_the_box_to_see": "Hover on the box to see",
+        "programming_skills": "Programming Skills",
+        "and_more": "and more...",
+        "social_skills": "Social Skills",
+        "hobbies": "Hobbies"
+    },
+    "contactMe": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message",
+        "send_mail": "Send Mail"
     },
     "footer": {
         "all_rights_reserved": "All rights reserved ©2024"

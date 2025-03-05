@@ -105,7 +105,7 @@ const Header = () => {
                                 {t("contact_me")}
                             </Link>
                         </div>
-                        <ReactLanguageSelect languages={["en", "am"]} />
+
                         <div
                             className="hamburger-menu"
                             onClick={() => {

@@ -6,7 +6,7 @@ import Link from "next/link";
 import "./page.scss";
 import IMAGES from "../../../utils/images";
 import { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import axios from "axios";
 import "react-loading-skeleton/dist/skeleton.css";
 import dynamic from "next/dynamic";
@@ -18,7 +18,9 @@ const Skeleton = dynamic(() => import("react-loading-skeleton"));
 
 export default function Home() {
     const localActive = useLocale();
-
+    const headerT = useTranslations("header");
+    const projectPreviewT = useTranslations("projectPreview");
+    const skillsT = useTranslations("skills");
     const [itemOffSet, setItemOffSet] = useState(0);
     const [sliderMid, setSliderMid] = useState(2);
     const itemCount = 5;
@@ -156,7 +158,7 @@ export default function Home() {
             {/* ------------------------------------------------------------------------------------------------
 												MY PROJECTS
 	        ------------------------------------------------------------------------------------------------ --> */}
-            <div className="section-heading">My Projects</div>
+            <div className="section-heading">{headerT("my_projects")}</div>
 
             <section className="my-projects-section">
                 <div className="container">
@@ -202,7 +204,7 @@ export default function Home() {
                                 <h3 className="project-title">{previewingProject?.name}</h3>
                                 <div>
                                     <h4>
-                                        Creation Time |{" "}
+                                        {projectPreviewT("creation_time")} |{" "}
                                         {Object.keys(previewingProject).length ? (
                                             <span>{previewingProject?.creationTime}</span>
                                         ) : (
@@ -213,7 +215,7 @@ export default function Home() {
                                         )}
                                     </h4>
                                     <h4>
-                                        Technologies Used |{" "}
+                                        {projectPreviewT("technologies_used")} |{" "}
                                         {Object.keys(previewingProject).length ? (
                                             <span>{previewingProject?.technologies}</span>
                                         ) : (
@@ -224,7 +226,7 @@ export default function Home() {
                                         )}
                                     </h4>
                                     <h4>
-                                        Category |{" "}
+                                        {projectPreviewT("category")} |{" "}
                                         {Object.keys(previewingProject).length ? (
                                             <span>{previewingProject?.category}</span>
                                         ) : (
@@ -241,7 +243,7 @@ export default function Home() {
                                         href={previewingProject?.link}
                                         target="_blank"
                                     >
-                                        Preview
+                                        {projectPreviewT("preview")}
                                     </a>
                                 </button>
                             </div>
@@ -288,7 +290,7 @@ export default function Home() {
                 <div className="view-all-projects-container">
                     <div className="left-side"></div>
                     <Link href={`${localActive}/projects`}>
-                        <div className="view-all-projects">View All Projects</div>
+                        <div className="view-all-projects">{projectPreviewT("view_all_projects")}</div>
                     </Link>
                     <div className="right-side"></div>
                 </div>
@@ -303,7 +305,7 @@ export default function Home() {
                     data-aos="flip-down"
                 >
                     <div id="hint_inner_contaner">
-                        Hover on the box to see
+                        {skillsT("hover_on_the_box_to_see")}
                         <Image
                             src={IMAGES.eyeIcon}
                             alt="Eye Icon"
@@ -324,9 +326,10 @@ export default function Home() {
                             <h4>Next.js</h4>
                             <h4>SQL, MySQL</h4>
                             <h4>Node.Js/MongoDB</h4>
-                            <h4>and more...</h4>
+                            {skillsT("and_more")}...
+                            <h4></h4>
                         </div>
-                        <div className="skill_box_cover_img">Programming Skills</div>
+                        <div className="skill_box_cover_img"> {skillsT("programming_skills")}</div>
                     </div>
 
                     <div className="skill_box">
@@ -341,9 +344,9 @@ export default function Home() {
                             <h4>Communicable</h4>
                             <h4>Team Worker</h4>
                             <h4>Reliable and Honest</h4>
-                            <h4>and more...</h4>
+                            <h4> {skillsT("and_more")}...</h4>
                         </div>
-                        <div className="skill_box_cover_img">Social Skills</div>
+                        <div className="skill_box_cover_img">{skillsT("social_skills")}</div>
                     </div>
 
                     <div className="skill_box">
@@ -355,9 +358,9 @@ export default function Home() {
                             <h4>Sports</h4>
                             <h4>Music</h4>
                             <h4>Learning stuff</h4>
-                            <h4>and more...</h4>
+                            <h4>{skillsT("and_more")}...</h4>
                         </div>
-                        <div className="skill_box_cover_img">Hobbies</div>
+                        <div className="skill_box_cover_img">{skillsT("hobbies")}</div>
                     </div>
                 </div>
                 <Image
