@@ -7,14 +7,20 @@ import Link from "next/link";
 import { useState } from "react";
 import { useLocale } from "next-intl";
 import { useTranslations } from "next-intl";
-import ReactLanguageSelect from "react-languages-select";
-import "react-languages-select/scss/react-languages-select.scss";
 
 const Header = () => {
     const localActive = useLocale();
     const t = useTranslations("header");
 
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+    const handleChangeLanguage = (value: string) => {
+        if (value && value !== localActive) {
+            const currentUrl = window.location.href;
+            const newUrl = currentUrl.replace(`/${localActive}`, `/${value}`);
+            window.location.href = newUrl;
+        }
+    };
 
     return (
         <>
@@ -105,7 +111,14 @@ const Header = () => {
                                 {t("contact_me")}
                             </Link>
                         </div>
-
+                        <select
+                            name="language"
+                            id="language"
+                            onChange={(e) => handleChangeLanguage(e.target.value)}
+                        >
+                            <option value="en">EN</option>
+                            <option value="am">AM</option>
+                        </select>
                         <div
                             className="hamburger-menu"
                             onClick={() => {
